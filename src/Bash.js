@@ -6,31 +6,35 @@ import {
   ActionInput,
   ActionLine,
   LoginSpan,
+  VimBarSpan,
 } from './Lines'
 import { getResponse } from './kubash/index'
 
 const BlackWrap = styled.div`
   font-family: 'Courier New', Courier, monospace;
   color: white;
-  padding: 1em;
   text-align: left;
   background-color: black;
-  position: fixed;
   width: 100%;
   height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
+  line-height: 1.2em;
 `
 
 class Bash extends Component {
   constructor() {
     super()
     this.state = {
-      histories: [
+      histories: [],
+      vimHistories: [
         {
-          text: ['Welcome to Kubash!'],
+          text: ['Here you are in vim!'],
+          type: 'say',
         },
       ],
+      vimBarText: '~',
       loginText: 'ubuntu@mycomputer: ',
       inputText: '',
       state: null,
@@ -48,10 +52,18 @@ class Bash extends Component {
   }
   handleSubmit(e) {
     e.preventDefault()
-    const { loginText, inputText, histories } = this.state
-    histories.push({
-      text: [`${loginText} ${inputText}`],
-    })
+    const { loginText, inputText, histories, vimHistories } = this.state
+    if (vimHistories.length > 0) {
+      vimHistories.push({
+        text: [inputText],
+        type: 'input',
+      })
+    } else {
+      histories.push({
+        text: [`${loginText} ${inputText}`],
+        type: 'input',
+      })
+    }
     this.setState({
       histories,
     })
@@ -61,32 +73,69 @@ class Bash extends Component {
     this.actionInput.focus()
   }
   callResponse() {
-    const { histories, inputText, state } = this.state
+    const { histories, inputText, state, vimHistories } = this.state
+    console.log('sending', inputText, state)
     const res = getResponse(inputText, state)
-    histories.push({
-      text: res.say,
-    })
-    this.setState({
-      histories,
-      inputText: '',
-      state: res.state,
-    })
+    console.log('returning', res)
+    if (res.displayType && res.displayType === 'vim') {
+      vimHistories.push({
+        text: res.say,
+        type: 'say',
+      })
+      this.setState({
+        vimHistories,
+        inputText: '',
+        state: res.state,
+      })
+    } else {
+      histories.push({
+        text: res.say,
+        type: 'say',
+      })
+      this.setState({
+        histories,
+        inputText: '',
+        state: res.state,
+        // Clearn vimhistories in case switching out of vim
+        vimHistories: [],
+      })
+    }
+    document.getElementById('bottom').scrollIntoView()
   }
   componentDidMount() {
     this.callResponse()
     this.actionInput.focus()
   }
   render() {
-    const { inputText, histories, loginText } = this.state
+    const {
+      inputText,
+      vimHistories,
+      vimBarText,
+      histories,
+      loginText,
+    } = this.state
+    console.log('hx:', vimHistories)
     return (
       <BlackWrap onClick={this.handleClick}>
-        {histories.map((hx, i) => {
-          return hx.text.map((txt, textI) => (
-            <HistoryLine key={`${i}-${textI}`}>{txt}</HistoryLine>
-          ))
-        })}
+        {vimHistories.length === 0 &&
+          histories.map((hx, i) => {
+            return hx.text.map((txt, textI) => (
+              <HistoryLine key={`${i}-${textI}`} type={hx.type}>
+                {txt}
+              </HistoryLine>
+            ))
+          })}
+        {vimHistories.length > 0 &&
+          vimHistories.map((hx, i) => {
+            return hx.text.map((txt, textI) => (
+              <HistoryLine key={`${i}-${textI}`} type={hx.type}>
+                -{txt}
+              </HistoryLine>
+            ))
+          })}
         <ActionLine>
-          <LoginSpan>{loginText}</LoginSpan>
+          {vimHistories.length === 0 && <LoginSpan>{loginText}</LoginSpan>}
+          {vimHistories.length > 0 && <VimBarSpan>{vimBarText}</VimBarSpan>}
           <ActionSpan>
             <form onSubmit={this.handleSubmit}>
               <ActionInput
@@ -99,6 +148,7 @@ class Bash extends Component {
             </form>
           </ActionSpan>
         </ActionLine>
+        <div id="bottom" />
       </BlackWrap>
     )
   }

@@ -4,7 +4,9 @@ const Line = styled.div`
   width: 100%;
 `
 
-const HistoryLine = styled(Line)``
+const HistoryLine = styled(Line)`
+  color: ${props => (props.type === 'say' ? 'green' : 'white')};
+`
 
 const ActionLine = styled(Line)`
   display: grid;
@@ -25,6 +27,17 @@ const LoginSpan = styled.div`
   margin-right: 0.5em;
 `
 
+const VimBarSpan = styled.div`
+  margin-right: 0.5em;
+`
+
 const ActionSpan = styled.div``
 
-export { ActionSpan, HistoryLine, ActionLine, LoginSpan, ActionInput }
+export {
+  ActionSpan,
+  HistoryLine,
+  ActionLine,
+  LoginSpan,
+  ActionInput,
+  VimBarSpan,
+}
