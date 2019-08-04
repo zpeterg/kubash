@@ -146,6 +146,7 @@ class Bash extends Component {
                 }}
                 value={inputText}
                 onChange={this.handleChange}
+                spellCheck="false"
               />
             </form>
           </ActionSpan>

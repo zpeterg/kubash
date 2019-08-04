@@ -21,6 +21,7 @@ const ActionInput = styled.input`
   color: inherit;
   font-family: inherit;
   font-size: inherit;
+  outline: none;
 `
 
 const LoginSpan = styled.div`
