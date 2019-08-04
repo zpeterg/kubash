@@ -100,11 +100,13 @@ class Bash extends Component {
         vimHistories: [],
       })
     }
-    document.getElementById('bottom').scrollIntoView()
   }
   componentDidMount() {
     this.callResponse()
     this.actionInput.focus()
+  }
+  componentDidUpdate() {
+    document.getElementById('bottom').scrollIntoView()
   }
   render() {
     const {
