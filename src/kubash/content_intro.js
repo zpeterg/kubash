@@ -48,6 +48,7 @@ export default {
         'There are other kinds of files - like ".js", which is a JavaScript file for computers to read.',
         'Type "c" to continue.',
       ],
+      output: ['myfile.txt'],
       expect: ['c'],
       other: ['Oops! Just type "c" to continue.'],
     },
