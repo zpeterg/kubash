@@ -32,6 +32,27 @@ export default {
     },
     {
       say: [
+        'Ok, let me explain a little bit about computers that will help you.',
+        'Computers use what\'s called a "file system". The file system is a way of storing and getting files.',
+        'What\'s a file? I\'ll show you one. Type "ls".',
+      ],
+      expect: ['ls'],
+      other: [
+        'You don\'t need to type anything except just "ls". Without the quotes.',
+      ],
+    },
+    {
+      say: [
+        'And here you go! Look right below and you\'ll see that you have a file. The file is "myfile.txt".',
+        'The part after the period ("txt") is called the File Extension. It helps you know that kind of file it is. This file is a text file. That means it\'s for a person to read.',
+        'There are other kinds of files - like ".js", which is a JavaScript file for computers to read.',
+        'Type "c" to continue.',
+      ],
+      expect: ['c'],
+      other: ['Oops! Just type "c" to continue.'],
+    },
+    {
+      say: [
         "Well, that's got it for the basic use of bash! You're moving along quick!",
         'Next up, you\'ll learn how to use vim to change documents. Type "c" or "continue".',
       ],

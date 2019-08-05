@@ -30,6 +30,7 @@ const getResponse = (text, state) => {
     else {
       return {
         say: nextStep.say,
+        output: nextStep.output || null,
         state: { section: currentSection.name, step: state.step + 1 },
         displayType: nextStep.displayType,
       }

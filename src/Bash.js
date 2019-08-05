@@ -82,6 +82,13 @@ class Bash extends Component {
         text: res.say,
         type: 'say',
       })
+      // If output, add that
+      if (res.output) {
+        vimHistories.push({
+          text: res.output,
+          type: 'output',
+        })
+      }
       this.setState({
         vimHistories,
         inputText: '',
@@ -92,6 +99,12 @@ class Bash extends Component {
         text: res.say,
         type: 'say',
       })
+      if (res.output) {
+        histories.push({
+          text: res.output,
+          type: 'output',
+        })
+      }
       this.setState({
         histories,
         inputText: '',
