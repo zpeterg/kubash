@@ -1,15 +1,19 @@
-import content_intro from './content_intro'
-import content_vim from './content_vim'
+import contentFiles1 from './contentFiles1'
+import contentFiles2 from './contentFiles2'
+import contentVim from './contentVim'
 
-const content = [content_intro, content_vim]
+const content = [contentFiles2, contentVim]
 
 const getResponse = (text, state) => {
   if (!state) {
-    console.log('--------------')
     return {
       say: [...content[0].say, ...content[0].steps[0].say],
       state: { section: 'intro', step: 0 },
       displayType: content[0].steps[0].displayType,
+      bar:
+        typeof content[0].steps[0].bar === 'undefined'
+          ? null
+          : content[0].steps[0].bar,
     }
   }
   const currentSectionIndex = content.findIndex(x => x.name === state.section)
@@ -33,6 +37,7 @@ const getResponse = (text, state) => {
         output: nextStep.output || null,
         state: { section: currentSection.name, step: state.step + 1 },
         displayType: nextStep.displayType,
+        bar: typeof nextStep.bar === 'undefined' ? null : nextStep.bar,
       }
     }
   }

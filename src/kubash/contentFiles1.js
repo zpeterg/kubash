@@ -1,5 +1,5 @@
 export default {
-  name: 'intro',
+  name: 'files1',
   say: ['[Introduction] Welcome to Kubash!'],
   steps: [
     {
@@ -12,6 +12,7 @@ export default {
         'Go ahead and type "c" or "continue".',
       ],
       expect: ['c', 'continue'],
+      bar: 'ubuntu@mycomputer:~/myfiles',
       other: [
         'Hmm, it looks like you didn\'t type "c" or "continue". Of course, don\'t type the quotes "", just the word. Try again.',
       ],
@@ -110,18 +111,49 @@ export default {
         'I think we\'re done here. Type "c" to continue.',
       ],
       output: ['fishfile.txt', 'myfile.txt'],
-      expect: ['x'],
+      expect: ['c', 'continue'],
       other: ['Just "c" please!'],
     },
     {
       say: [
-        "Well, that's got it for the basic use of bash! You're moving along quick!",
-        'Next up, you\'ll learn how to use vim to change documents. Type "c" or "continue".',
+        "Ok, we're going to get to some more cool stuff and show you more of where you are in bash and how to get around.",
+        "But first, let's recap.",
+        'Remember how to make a file? Go ahead and make a file called cowfile.txt.',
       ],
-      expect: ['c', 'continue'],
+      expect: ['touch cowfile.txt'],
       other: [
-        'Oop, it seems you don\'t want to move on. But we\'ve run out of stuff for you to learn here. So type "continue"',
+        'Mmm, you got something wrong. To make a file called cowfile.txt, just type "touch cowfile.txt"',
       ],
+    },
+    {
+      say: [
+        'Good!',
+        'Alright, now how do you list out the files that you have made so far? Go ahead and type it now.',
+      ],
+      output: [''],
+      expect: ['ls'],
+      other: ['Remember, to "list" your files, just type "ls". Try it again.'],
+    },
+    {
+      say: [
+        'There you go!',
+        'Ok, so next challenge for you: How do you list your files in a column (all stacked-up)?',
+      ],
+      output: ['cowfile.txt     fishfile.txt    myfile.txt'],
+      expect: ['ls -l'],
+      other: [
+        'To list in a column, just type "ls -l". Don\'t for that "-l" at the end!',
+      ],
+    },
+    {
+      say: [
+        'Great!',
+        "That's it for here. You've learned what a file is, how to make them, and how to list them two ways.",
+        'Type "c" to continue.',
+      ],
+      output: ['cowfile.txt', 'fishfile.txt', 'myfile.txt'],
+      expect: ['c', 'continue'],
+      other: ['Oops. Just "continue" or "c" is fine.'],
     },
   ],
 }

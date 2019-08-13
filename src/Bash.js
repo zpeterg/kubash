@@ -35,7 +35,7 @@ class Bash extends Component {
         },
       ],
       vimBarText: '~',
-      loginText: 'ubuntu@mycomputer: ',
+      loginText: '',
       inputText: '',
       state: null,
     }
@@ -105,6 +105,9 @@ class Bash extends Component {
           type: 'output',
         })
       }
+      // If changing bar, change it (it sticks until changed next)
+      if (res.bar !== null) this.setState({ loginText: res.bar })
+      // Set rest of state
       this.setState({
         histories,
         inputText: '',
