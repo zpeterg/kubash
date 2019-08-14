@@ -106,7 +106,8 @@ class Bash extends Component {
         })
       }
       // If changing bar, change it (it sticks until changed next)
-      if (res.bar !== null) this.setState({ loginText: res.bar })
+      if (typeof res.bar !== 'undefined' && res.bar !== null)
+        this.setState({ loginText: res.bar })
       // Set rest of state
       this.setState({
         histories,
