@@ -2,7 +2,7 @@ import contentFiles1 from './contentFiles1'
 import contentFiles2 from './contentFiles2'
 import contentVim from './contentVim'
 
-const content = [contentFiles2, contentVim]
+const content = [contentFiles1, contentFiles2]
 
 const getResponse = (text, state) => {
   if (!state) {

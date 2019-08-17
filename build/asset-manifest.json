@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kubash/build/static/css/main.466b9ff9.chunk.css",
-    "main.js": "/kubash/build/static/js/main.5edf3515.chunk.js",
-    "main.js.map": "/kubash/build/static/js/main.5edf3515.chunk.js.map",
+    "main.js": "/kubash/build/static/js/main.08365531.chunk.js",
+    "main.js.map": "/kubash/build/static/js/main.08365531.chunk.js.map",
     "runtime~main.js": "/kubash/build/static/js/runtime~main.8c8efe55.js",
     "runtime~main.js.map": "/kubash/build/static/js/runtime~main.8c8efe55.js.map",
     "static/js/2.c9c03324.chunk.js": "/kubash/build/static/js/2.c9c03324.chunk.js",
     "static/js/2.c9c03324.chunk.js.map": "/kubash/build/static/js/2.c9c03324.chunk.js.map",
     "index.html": "/kubash/build/index.html",
-    "precache-manifest.303b1178c628d5bc3342fc2805a8dc92.js": "/kubash/build/precache-manifest.303b1178c628d5bc3342fc2805a8dc92.js",
+    "precache-manifest.7074f1b4acfced04ded42eda45289f93.js": "/kubash/build/precache-manifest.7074f1b4acfced04ded42eda45289f93.js",
     "service-worker.js": "/kubash/build/service-worker.js",
     "static/css/main.466b9ff9.chunk.css.map": "/kubash/build/static/css/main.466b9ff9.chunk.css.map"
   }
