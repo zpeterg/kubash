@@ -30,7 +30,7 @@ export default {
       say: [
         "Let's get you started!",
         'First, a little that you should know:',
-        'Bash is a way of interacting with a computer. Just like you can use a mouse or touch a scream to make things happen, you can also "talk" to a computer in Bash',
+        'Bash is a way of interacting with a computer. Just like you can use a mouse or touch a screen to make things happen, you can also "talk" to a computer in Bash',
         'Computer programmers and people who use computers a lot really like Bash - it lets them do some things faster than using a mouse, and it also lets you do the same things over and over easily by running a list of commands.',
         "You'll see as you go!",
         'Go ahead and type "c" or "continue".',
