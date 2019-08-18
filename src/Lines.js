@@ -5,7 +5,7 @@ const Line = styled.div`
 `
 
 const HistoryLine = styled(Line)`
-  color: ${props => (props.type === 'say' ? 'green' : 'white')};
+  color: ${props => (props.type === 'say' ? '#02aa02' : 'white')};
 `
 
 const ActionLine = styled(Line)`
@@ -22,6 +22,7 @@ const ActionInput = styled.input`
   font-family: inherit;
   font-size: inherit;
   outline: none;
+  margin-bottom: 1em;
 `
 
 const LoginSpan = styled.div`
