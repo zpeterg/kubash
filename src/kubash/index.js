@@ -19,7 +19,7 @@ const getResponse = (text, state) => {
   const currentSectionIndex = content.findIndex(x => x.name === state.section)
   const currentSection = content[currentSectionIndex]
   const currentStep = currentSection.steps[state.step]
-  if (currentStep.expect.indexOf(text) >= 0) {
+  if (currentStep.expect.indexOf(text.trim()) >= 0) {
     const nextStep = currentSection.steps[state.step + 1]
     // If at end of section
     if (typeof nextStep === 'undefined') {

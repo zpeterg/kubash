@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3957eae8001d7abe473a0cbdcd7416bd",
+    "revision": "7960f2fdd050b24732b3049c795e48ea",
     "url": "/kubash/build/index.html"
   },
   {
-    "revision": "2498b13df257cca456bf",
+    "revision": "c789a4a0ae0e5ce008ee",
     "url": "/kubash/build/static/css/main.60efb979.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kubash/build/static/js/2.c9c03324.chunk.js"
   },
   {
-    "revision": "2498b13df257cca456bf",
-    "url": "/kubash/build/static/js/main.52a1e73a.chunk.js"
+    "revision": "c789a4a0ae0e5ce008ee",
+    "url": "/kubash/build/static/js/main.3ac71b07.chunk.js"
   },
   {
     "revision": "773597c586f3c7db1609",

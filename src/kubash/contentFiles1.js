@@ -68,7 +68,7 @@ export default {
     },
     {
       say: [
-        "And there you go! Look below and read what is inside of the file \"myfile.txt\". Remember it's in white because it's what you actually see in a real Bash operating system. This is just like a test place to learn Bash, so that's why you have this green test to help you.",
+        "And there you go! Look below and read what is inside of the file \"myfile.txt\". Remember it's in white because it's what you actually see when you're using Bash. This is just like a test place to learn Bash, so that's why you have this green text to help you.",
         'You can see that "myfile.txt" is the beginning of a story. It is "text" - writing meant for a person to read.',
         'You can even tell that it\'s text because it says ".txt" at the end.',
         'Some files end with other things. Like ".js" means that it\'s a JavaScript file. A JavaScript file is a set of instructions for a computer to read.',
