@@ -106,7 +106,9 @@ export default {
       ],
       output: ['fishfile.txt     myfile.txt'],
       expect: ['ls -l'],
-      other: ['Ya, no, nothing else. Just type "ls" without the quotes.'],
+      other: [
+        'Ya, no, nothing else. Just type "ls -l" without the quotes. Don\'t forget that space between the "ls" and the "-l". They\'re like two words',
+      ],
     },
     {
       say: [

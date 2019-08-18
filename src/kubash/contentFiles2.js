@@ -48,7 +48,7 @@ export default {
       ],
       output: ['myfiles     '],
       expect: ['cat myfiles'],
-      other: ['Nope. To "concatenate", type "cat myfile".'],
+      other: ['Nope. To "concatenate", type "cat myfiles".'],
     },
     {
       say: [
@@ -57,7 +57,7 @@ export default {
         'But you can list (ls) and change directory (cd) into them, and you can put things inside of them.',
         'Let\'s go ahead and put a file here. Make a file called "lazycow.txt" inside of this directory.',
       ],
-      output: ['cat: myfile/: Is a directory'],
+      output: ['cat: myfiles/: Is a directory'],
       expect: ['touch lazycow.txt'],
       other: [
         'Mmmm, remember, to make a file, you just type "touch lazycow.txt".',
