@@ -14,7 +14,7 @@ export default {
         'Go ahead and type "c" or "continue", and then press enter. Make sure you don\'t type the quotes "" - just letters or words.',
       ],
       expect: ['c', 'continue'],
-      bar: 'ubuntu@mycomputer:~/myfiles',
+      bar: 'ubuntu@mycomputer:~/myfiles $ ',
       other: [
         'Hmm, it looks like you didn\'t type "c" or "continue". Of course, don\'t type the quotes "", just the word. Try again.',
       ],
