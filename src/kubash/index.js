@@ -8,7 +8,7 @@ const getResponse = (text, state) => {
   if (!state) {
     return {
       say: [...content[0].say, ...content[0].steps[0].say],
-      state: { section: 'intro', step: 0 },
+      state: { section: 'files1', step: 0 },
       displayType: content[0].steps[0].displayType,
       bar:
         typeof content[0].steps[0].bar === 'undefined'

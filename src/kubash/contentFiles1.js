@@ -1,15 +1,17 @@
 export default {
   name: 'files1',
-  say: ['[Introduction] Welcome to Kubash!'],
+  say: ['[Introduction to Files]'],
   steps: [
     {
       say: [
-        "Let's get you started!",
+        "Welcome to Kubash! You're going to have fun learning Bash, and it'll be really handy with using computers! Let's get you started!",
         'First, a little that you should know:',
-        'Bash is a way of interacting with a computer. Just like you can use a mouse or touch a scream to make things happen, you can also "talk" to a computer in Bash',
+        'Bash is a way of talking with a computer and telling it what to do.',
+        'Just like you can use a mouse or touch a scream to make things happen, you can also talk to a computer in Bash.',
         'Computer programmers and people who use computers a lot really like Bash - it lets them do some things faster than using a mouse, and it also lets you do the same things over and over easily by running a list of commands.',
         "You'll see as you go!",
-        'Go ahead and type "c" or "continue".',
+        "So let's get started. Now, what you need to do is just type letters or words on your keyboard. They'll show up below. Then you've typed what you need to, just press the \"Enter\" key.",
+        'Go ahead and type "c" or "continue", and then press enter. Make sure you don\'t type the quotes "" - just letters or words.',
       ],
       expect: ['c', 'continue'],
       bar: 'ubuntu@mycomputer:~/myfiles',
@@ -19,12 +21,12 @@ export default {
     },
     {
       say: [
-        "Ok, so first, let me describe a little more about what you're looking at in Bash.",
-        "First, you're always typing on the last line, and then the lines above show the history of what you have already typed.",
-        "Handy, huh? That way you can just scroll up and see what you've already done.",
+        "Let me describe a little more about what you're looking at in Bash.",
+        "First, you're usually typing on the last line on the screen, and then the lines above show the history of what you have already typed.",
+        'Handy, huh? That way you can just scroll up and see what you\'ve already done. Go ahead and look up there and see the "c" or "continue" that you typed',
         'To the left below, you\'ll see "ubuntu@mycomputer:".',
-        "You'll see that wherever you are going to type, and you'll also see it above in things you have typed.",
-        "Let's start a new line just by typing Enter.",
+        "You'll usually see that (or something like it) where you are going to type, and you'll also see it above in things you have already typed.",
+        "Let's start a new line just by typing Enter. Don't type the word - just press the Enter key",
       ],
       expect: [''],
       other: [
@@ -35,7 +37,9 @@ export default {
       say: [
         'Ok, let me explain a little bit about computers that will help you.',
         'Computers use what\'s called a "file system". The file system is a way of storing and getting files.',
-        'What\'s a file? I\'ll show you one. Type "ls".',
+        "These files could be stories that you're writing, or they could be special things that you can tell the computer to do.",
+        'They can even run a robot or make your computer send out a website for others to see!',
+        'Want to see a file? I\'ll show you one. Type "ls".',
       ],
       expect: ['ls'],
       other: [
@@ -53,10 +57,9 @@ export default {
     },
     {
       say: [
-        'You might be wondering: But what IS a file?',
-        'You might be wondering: But what IS a file? And what is myfile.txt?',
-        'Well, let\'s check out myfile.txt. A simple way to see what\'s in a file is to concatentate "cat" a file.',
-        'Type "cat myfile.txt',
+        "You might be thinking: What? That little \"myfile.txt\" is a file? That's not very exciting. But that's just the NAME of the file. There's stuff inside!",
+        'Let\'s check out myfile.txt. A simple way to see what\'s in a file is to concatentate "cat" a file.',
+        'Type "cat myfile.txt". Now remember, don\'t type the quotes, just the words.',
       ],
       expect: ['cat myfile.txt'],
       other: [
@@ -65,7 +68,7 @@ export default {
     },
     {
       say: [
-        'And there you go! Look below and read what is inside of the file "myfile.txt". Remember it\'s in white because it\'s what you actuall see in bash.',
+        "And there you go! Look below and read what is inside of the file \"myfile.txt\". Remember it's in white because it's what you actually see in a real Bash operating system. This is just like a test place to learn Bash, so that's why you have this green test to help you.",
         'You can see that "myfile.txt" is the beginning of a story. It is "text" - writing meant for a person to read.',
         'You can even tell that it\'s text because it says ".txt" at the end.',
         'Some files end with other things. Like ".js" means that it\'s a JavaScript file. A JavaScript file is a set of instructions for a computer to read.',
@@ -101,7 +104,7 @@ export default {
         "There's actually another way to see files that looks a little nicer sometimes - in nice little columns like an index in a book.",
         "Let's try that. Just type ls -l.",
       ],
-      output: ['fishfile.txt'],
+      output: ['fishfile.txt     myfile.txt'],
       expect: ['ls -l'],
       other: ['Ya, no, nothing else. Just type "ls" without the quotes.'],
     },

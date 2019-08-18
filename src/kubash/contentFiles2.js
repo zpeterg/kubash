@@ -1,6 +1,6 @@
 export default {
-  name: 'intro',
-  say: ['[Introduction] Welcome to Kubash!'],
+  name: 'files2',
+  say: ['[More About Files]'],
   steps: [
     {
       say: [
